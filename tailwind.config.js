@@ -4,7 +4,17 @@ module.exports = {
     './components/**/*.{js,ts,jsx,tsx}',
   ],
   theme: {
-    extend: {},
+    extend: {
+      colors: {
+        'primary':'#65FEDA',
+        'secondary':'#071124',
+        'txt':'#CDD6F7',
+      }
+    },
+    fontFamily:{
+      bb : ["Baloo Bhai 2","cursive"],
+      pop: ["Poppins",'sans-serif']
+    }
   },
   plugins: [],
 }

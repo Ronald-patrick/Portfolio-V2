@@ -1,86 +1,131 @@
-import type { NextPage } from 'next'
-import Head from 'next/head'
-import Image from 'next/image'
+import type { NextPage } from "next";
+import { useEffect, useRef } from "react";
+import Head from "next/head";
+import Image from "next/image";
+import Header from "../components/Header";
+import { ArrowSmDownIcon, DesktopComputerIcon } from "@heroicons/react/outline";
+
+import { CubeIcon } from "@heroicons/react/solid";
+
+import Typed from "typed.js";
 
 const Home: NextPage = () => {
+  const el: any = useRef(null);
+  useEffect(() => {
+    const typed = new Typed(el.current, {
+      strings: ["JavaScript", "M E R N", "NextJS", "Flutter", "Android"], // Strings to display
+      // Speed settings, try diffrent values untill you get good results
+      startDelay: 500,
+      typeSpeed: 100,
+      backSpeed: 100,
+      backDelay: 500,
+      loop: true,
+    });
+
+    // Destropying
+    return () => {
+      typed.destroy();
+    };
+  }, []);
+
+  const scroll = () => {
+    const section: any = document.getElementById("about");
+    section.scrollIntoView({ behavior: "smooth", block: "start" });
+  };
+
   return (
-    <div className="flex min-h-screen flex-col items-center justify-center py-2">
+    <div className="bg-gradient-to-b from-[#141E30] to-secondary text-white font-pop h-full">
       <Head>
-        <title>Create Next App</title>
+        <title>Ronald Patrick</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
+      <Header />
+      <div className="flex flex-col md:flex-row justify-start md:justify-around p-4 max-w-7xl mx-auto items-center h-[85vh] relative">
+        <img
+          src="./self.png"
+          alt=""
+          className="w-[200px] md:w-[280px] object-contain cursor-pointer border-4 border-white rounded-full"
+        />
+        <div className="text-txt text-center">
+          <h1 className="text-[30px] md:text-[45px] border-spacing-3 mt-10">
+            Hi, I'm{" "}
+            <span className="text-[30px] md:text-[60px] text-primary font-extrabold">
+              Ronald Patrick{" "}
+              <span className="right-1 invisible md:visible animate-bounce absolute rounded-full">
+                👋
+              </span>
+            </span>
+          </h1>
 
-      <main className="flex w-full flex-1 flex-col items-center justify-center px-20 text-center">
-        <h1 className="text-6xl font-bold">
-          Welcome to{' '}
-          <a className="text-blue-600" href="https://nextjs.org">
-            Next.js!
-          </a>
-        </h1>
-
-        <p className="mt-3 text-2xl">
-          Get started by editing{' '}
-          <code className="rounded-md bg-gray-100 p-3 font-mono text-lg">
-            pages/index.tsx
-          </code>
-        </p>
-
-        <div className="mt-6 flex max-w-4xl flex-wrap items-center justify-around sm:w-full">
-          <a
-            href="https://nextjs.org/docs"
-            className="mt-6 w-96 rounded-xl border p-6 text-left hover:text-blue-600 focus:text-blue-600"
-          >
-            <h3 className="text-2xl font-bold">Documentation &rarr;</h3>
-            <p className="mt-4 text-xl">
-              Find in-depth information about Next.js features and its API.
-            </p>
-          </a>
-
-          <a
-            href="https://nextjs.org/learn"
-            className="mt-6 w-96 rounded-xl border p-6 text-left hover:text-blue-600 focus:text-blue-600"
-          >
-            <h3 className="text-2xl font-bold">Learn &rarr;</h3>
-            <p className="mt-4 text-xl">
-              Learn about Next.js in an interactive course with quizzes!
-            </p>
-          </a>
-
-          <a
-            href="https://github.com/vercel/next.js/tree/canary/examples"
-            className="mt-6 w-96 rounded-xl border p-6 text-left hover:text-blue-600 focus:text-blue-600"
-          >
-            <h3 className="text-2xl font-bold">Examples &rarr;</h3>
-            <p className="mt-4 text-xl">
-              Discover and deploy boilerplate example Next.js projects.
-            </p>
-          </a>
-
-          <a
-            href="https://vercel.com/import?filter=next.js&utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-            className="mt-6 w-96 rounded-xl border p-6 text-left hover:text-blue-600 focus:text-blue-600"
-          >
-            <h3 className="text-2xl font-bold">Deploy &rarr;</h3>
-            <p className="mt-4 text-xl">
-              Instantly deploy your Next.js site to a public URL with Vercel.
-            </p>
-          </a>
+          <div className="text-xl md:text-3xl pt-7 flex justify-center items-center">
+            {" "}
+            Final Year CSE Undergrad{" "}
+            <span className="md:text-5xl pl-4">
+              <DesktopComputerIcon className="w-12 h-12" />
+            </span>{" "}
+          </div>
+          <div className="text-xl md:text-3xl pt-7">
+            Building Apps in <span ref={el}></span> ⚡
+          </div>
         </div>
-      </main>
 
-      <footer className="flex h-24 w-full items-center justify-center border-t">
-        <a
-          className="flex items-center justify-center gap-2"
-          href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Powered by{' '}
-          <Image src="/vercel.svg" alt="Vercel Logo" width={72} height={16} />
-        </a>
-      </footer>
+        <h1 className="absolute right-50 bottom-0 animate-bounce">
+          <ArrowSmDownIcon
+            onClick={scroll}
+            className="text-white w-10 h-10 cursor-pointer"
+          />
+        </h1>
+      </div>
+
+      <div
+        className="flex flex-col mt-10 justify-center p-4 max-w-7xl mx-auto items-center h-[100vh]"
+        id="about"
+      >
+        <h1 className="text-2xl md:text-4xl text-primary nmb">Who am I ?</h1>
+        <div className="border-t-2 w-20 h-2 mt-2 mb-10 border-primary"></div>
+
+        <p className="text-md md:text-2xl mt-5 text-txt ">
+          <li className="flex items-center">
+            <CubeIcon className="hidden md:flex w-7 h-7 mr-5 " />
+            Hello, I am Ronald Patrick, a CSE undergrad and Software developer.
+            <br />
+          </li>
+          <br />
+          <li className="flex items-center">
+            <CubeIcon className="hidden md:flex w-7 h-7 mr-5 " />
+            Final year computer science student @ Fr. Conceicao Rodrigues
+            College of Engineering (Mumbai).
+            <br />
+          </li>
+          <br />
+          <li className="flex items-center">
+            <CubeIcon className="hidden md:flex w-7 h-7 mr-5 " />
+            I am deeply passionate about software development.
+            <br />
+          </li>
+          <br />
+          <li className="flex items-center">
+            <CubeIcon className="hidden md:flex w-7 h-7 mr-5" />
+            Love spending time learning and building web applications and trying
+            out different tech stack. <br />
+          </li>
+
+          <br />
+          <li className="flex items-center">
+            <CubeIcon className="hidden md:flex w-7 h-7 mr-5" />
+            My core interest lies mainly in System Design but not
+            restricted to it. <br />
+          </li>
+          
+          <br />
+          <li className="flex items-center">
+            <CubeIcon className="hidden md:flex w-7 h-7 mr-5" />
+             I always love exploring and learning new technologies{" "}
+          </li>
+        </p>
+      </div>
     </div>
-  )
-}
+  );
+};
 
-export default Home
+export default Home;
