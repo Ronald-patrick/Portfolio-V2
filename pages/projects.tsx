@@ -50,7 +50,7 @@ const Projects: NextPage = () => {
       <div className="p-4 max-w-7xl mx-auto">
         <h1 className="text-center text-4xl font-bold mt-5 flex justify-center items-center">Projects <BadgeCheckIcon className="w-7 ml-3 h-7 text-primary"/> </h1>
         <div className="text-txt text-center text-xl mt-5">
-          Here are some side projects that I've recently worked on.
+          Here are some projects that I've recently worked on.
         </div>
 
         <div className="flex justify-center mt-7 gap-5">
