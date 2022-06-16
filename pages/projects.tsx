@@ -3,19 +3,31 @@ import Head from "next/head";
 import Header from "../components/Header";
 import { NextPage } from "next";
 import { data } from "../components/data"
+import { BadgeCheckIcon } from "@heroicons/react/solid";
+
+type userdata = {
+  type: string,
+  title: string,
+  desc: string,
+  tags: string[],
+  links: {
+      web: string | null,
+      gh: string | null
+  }
+}[];
 
 const Projects: NextPage = () => {
 
-  const [filterq, setFilter] = useState("all");
+  const [filterq, setFilter] = useState<string>("all");
 
-  const [userdata, setData] = useState(data);
+  const [userdata, setData] = useState<userdata>(data);
 
   useEffect(() => {
 
   }, [filterq])
   
   const sortData = (e: any) => {
-    const query = e.target.id;
+    const query:string = e.target.id;
     if (query == filterq) return;
     else {
       setFilter(query);
@@ -30,14 +42,13 @@ const Projects: NextPage = () => {
 
   };
   return (
-    <div className="bg-gradient-to-b from-[#141E30] to-secondary text-white font-pop h-full min-h-[100vh]">
+    <div className="text-white font-pop h-full min-h-[100vh]">
       <Head>
         <title>Projects</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <Header />
       <div className="p-4 max-w-7xl mx-auto">
-        <h1 className="text-center text-4xl font-bold mt-5">Projects</h1>
+        <h1 className="text-center text-4xl font-bold mt-5 flex justify-center items-center">Projects <BadgeCheckIcon className="w-7 ml-3 h-7 text-primary"/> </h1>
         <div className="text-txt text-center text-xl mt-5">
           Here are some side projects that I've recently worked on.
         </div>

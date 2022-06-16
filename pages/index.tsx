@@ -36,10 +36,9 @@ const Home: NextPage = () => {
   return (
     <div className="bg-gradient-to-b from-[#141E30] to-secondary text-white font-pop h-full">
       <Head>
-        <title>Ronald Patrick</title>
+        <title>Home</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <Header />
       <div className="flex flex-col md:flex-row justify-start md:justify-around p-4 max-w-7xl mx-auto items-center h-[85vh] relative">
         <img
           src="./self.png"
