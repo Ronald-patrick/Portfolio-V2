@@ -20,15 +20,15 @@ const MobileMenu = () => {
                 <MenuAlt3Icon className='w-16 h-16 text-primary p-2' />
             </div>
             {isOpen &&
-                <div className='gap-3 md:hidden z-10 w-40 h-[300px] fixed bottom-10 right-10 border-2 bg-secondary rounded-lg flex flex-col justify-center items-center'>
+                <div className='gap-3 md:hidden z-10 w-[120px] h-[270px] fixed bottom-10 right-10 border-2 bg-secondary rounded-lg flex flex-col justify-center items-center'>
                     <Link href="/">
-                        <HomeIcon className={`w-16 h-16 ${router.pathname === "/" ? "text-primary" : "text-white"}`} />
+                        <HomeIcon className={`w-12 h-12 ${router.pathname === "/" ? "text-primary" : "text-white"}`} />
                     </Link>
                     <Link href="/projects">
-                        <CollectionIcon className={`w-16 h-16 ${router.pathname === "/projects" ? "text-primary" : "text-white"}`} />
+                        <CollectionIcon className={`w-12 h-12 ${router.pathname === "/projects" ? "text-primary" : "text-white"}`} />
                     </Link>
                     <Link href="/contact">
-                        <ChatAlt2Icon className={`w-16 h-16 ${router.pathname === "/contact" ? "text-primary" : "text-white"}`} />
+                        <ChatAlt2Icon className={`w-12 h-12 ${router.pathname === "/contact" ? "text-primary" : "text-white"}`} />
                     </Link>
 
                 </div>
