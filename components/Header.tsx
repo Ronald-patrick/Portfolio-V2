@@ -22,9 +22,6 @@ function Header() {
             <h1 className='cursor-pointer hover:text-emerald-600'>Projects</h1>
         </Link>
         <Link href="/">
-            <h1 className='cursor-pointer hover:text-emerald-600'>Skills</h1>
-        </Link>
-        <Link href="/">
             <h1 className='cursor-pointer hover:text-emerald-600'>Contact</h1>
         </Link>
     </div>  
