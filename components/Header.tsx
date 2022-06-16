@@ -18,10 +18,7 @@ function Header() {
         <Link href="/">
             <h1 className='cursor-pointer hover:text-emerald-600'>Home</h1>
         </Link>
-        <Link href="/">
-            <h1 className='cursor-pointer hover:text-emerald-600'>Experience</h1>
-        </Link>
-        <Link href="/">
+        <Link href="/projects">
             <h1 className='cursor-pointer hover:text-emerald-600'>Projects</h1>
         </Link>
         <Link href="/">

@@ -84,7 +84,7 @@ const Home: NextPage = () => {
         <h1 className="text-2xl md:text-4xl text-primary nmb">Who am I ?</h1>
         <div className="border-t-2 w-20 h-2 mt-2 mb-10 border-primary"></div>
 
-        <p className="text-md md:text-2xl mt-5 text-txt ">
+        <div className="text-md md:text-2xl mt-5 text-txt ">
           <li className="flex items-center">
             <CubeIcon className="hidden md:flex w-7 h-7 mr-5 " />
             Hello, I am Ronald Patrick, a CSE undergrad and Software developer.
@@ -122,7 +122,7 @@ const Home: NextPage = () => {
             <CubeIcon className="hidden md:flex w-7 h-7 mr-5" />
              I always love exploring and learning new technologies{" "}
           </li>
-        </p>
+        </div>
       </div>
     </div>
   );
